@@ -21,16 +21,15 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Generate OQuaRE Metrics
+      - name: Run OQuaRE
         uses: tecnomod-um/oquare-metrics@v3.0
         with:
           ontology-folders: 'ontologies'
-          ontology-files: EWHR.owl
           reasoner: 'HERMIT'
 
-      - name: Download Results
+      - name: Upload Results as ZIP
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: OQuaRE_Final_Graphs
+          name: OQuaRE_Final_Results
           path: OQuaRE/
