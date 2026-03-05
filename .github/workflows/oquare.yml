@@ -1,0 +1,35 @@
+name: Get OQuaRE Metrics
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  run-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Generate OQuaRE Metrics
+        uses: tecnomod-um/oquare-metrics@v3.0
+        with:
+          ontology-folders: 'ontologies'
+          reasoner: 'HERMIT'
+
+      - name: Download Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: OQuaRE_Final_Graphs
+          path: OQuaRE/
