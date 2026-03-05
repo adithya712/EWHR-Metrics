@@ -9,7 +9,7 @@ Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
 Prefix: : <file://~/Documents/AI-ontologies/ERAS-NEP-owl-manchester-axioms.owl>
 
 Ontology: <file://~/Documents/AI-ontologies/ERAS-NEP-owl-manchester-axioms.owl>
-Import: <file://~/Documents/AI-ontologies/ERAS-TLO-owl-manchester-axioms.owl>
+#Import: <file://~/Documents/AI-ontologies/ERAS-TLO-owl-manchester-axioms.owl>
 
 Annotations: 
     rdfs:comment "An example mapping of ERAS-NEP CLIF axioms into OWL axioms using Manchester OWL syntax"
