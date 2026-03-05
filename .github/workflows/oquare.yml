@@ -25,7 +25,7 @@ jobs:
         uses: tecnomod-um/oquare-metrics@v3.0
         with:
           ontology-folders: 'ontologies'
-          ontology-file: EWHR.owl
+          ontology-files: EWHR.owl
           reasoner: 'HERMIT'
 
       - name: Download Results
