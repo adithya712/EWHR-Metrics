@@ -321,8 +321,8 @@ DisjointClasses: nep:Community,nep:Company,nep:Department,nep:Government,nep:Org
 DisjointClasses: nep:ConsequentialistNorm,nep:DeontologicalNorm,nep:VirtuousNorm
 DisjointClasses: nep:Obligation,nep:Permission,nep:Prohibition
 
-Rule: nep:Agent(?a), nep:AgentPlan(?ap), nep:PlanAction(?pa), nep:AgentAction(?ap), nep:Environment(?e), nep:Situation(?s), nep:is_perception_of(?s, ?e), nep:is_perceived_by(?e, ?a), nep:intends_to_realize(?a, ?s), nep:contains(?ap, ?pa), nep:is_implemented_by(?pa, ?aa), tlo:affects(?aa, ?e) -> nep:applies(?a, ?ap), nep:executes(?a, ?pa)
-Rule: nep:Agent(?a), nep:AgentPlan(?ap), nep:PlanAction(?pa), nep:AgentAction(?ap), nep:Environment(?e), nep:Situation(?s), nep:is_perception_of(?s, ?e), nep:is_perceived_by(?e, ?a), nep:recognizes(?a, ?s), nep:contains(?ap, ?pa), nep:is_implemented_by(?pa, ?aa), tlo:affects(?aa, ?e) -> nep:applies(?a, ?ap), nep:executes(?a, ?pa)
+Rule: nep:Agent(?a), nep:AgentPlan(?ap), nep:PlanAction(?pa), nep:AgentAction(?aa), nep:Environment(?e), nep:Situation(?s), nep:is_perception_of(?s, ?e), nep:is_perceived_by(?e, ?a), nep:intends_to_realize(?a, ?s), nep:contains(?ap, ?pa), nep:is_implemented_by(?pa, ?aa), tlo:affects(?aa, ?e) -> nep:applies(?a, ?ap), nep:executes(?a, ?pa)
+Rule: nep:Agent(?a), nep:AgentPlan(?ap), nep:PlanAction(?pa), nep:AgentAction(?aa), nep:Environment(?e), nep:Situation(?s), nep:is_perception_of(?s, ?e), nep:is_perceived_by(?e, ?a), nep:recognizes(?a, ?s), nep:contains(?ap, ?pa), nep:is_implemented_by(?pa, ?aa), tlo:affects(?aa, ?e) -> nep:applies(?a, ?ap), nep:executes(?a, ?pa)
 Rule: nep:AgentRole(?r), nep:Agent(?a), tlo:enacts(?a, ?r) -> nep:assigned_to(?r, ?a)
 Rule: nep:SituationPlanRepertoire(?r), nep:Situation(?s), nep:Agent(?a), nep:features_described_in(?s, ?r), nep:intends_to_realize(?a, ?s) -> nep:selects_plans_from(?a, ?r)
 Rule: nep:SituationPlanRepertoire(?r), nep:Situation(?s), nep:Agent(?a), nep:features_described_in(?s, ?r), nep:recognizes(?a, ?s) -> nep:selects_plans_from(?a, ?r)
