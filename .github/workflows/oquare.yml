@@ -3,6 +3,10 @@ name: Get OQuaRE Metrics
 on:
   workflow_dispatch: 
 
+# THIS IS THE MISSING PIECE FROM THE DOCS
+permissions:
+  contents: write 
+
 jobs:
   run-metrics:
     runs-on: ubuntu-latest
@@ -26,10 +30,3 @@ jobs:
         with:
           ontology-folders: 'ontologies'
           reasoner: 'HERMIT'
-
-      - name: Upload Results as ZIP
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: OQuaRE_Final_Results
-          path: OQuaRE/
